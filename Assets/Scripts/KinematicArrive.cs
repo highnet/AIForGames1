@@ -23,7 +23,6 @@ public class KinematicArrive : MonoBehaviour
     {
         for (; ; )
         {
-
             character.transform.LookAt(target.transform);
             yield return new WaitForSeconds(rotationWaitSeconds);
 

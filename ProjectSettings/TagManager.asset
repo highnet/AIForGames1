@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Squad Leader
+  - Squad Member
   layers:
   - Default
   - TransparentFX
