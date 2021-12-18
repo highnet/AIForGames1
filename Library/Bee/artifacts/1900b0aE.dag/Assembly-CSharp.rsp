@@ -340,10 +340,14 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/Alignment.cs"
+"Assets/KinematicSeekAndFlee.cs"
+"Assets/KinematicSeekFleeArrive.cs"
 "Assets/Scripts/Kinematic.cs"
 "Assets/Scripts/KinematicArrive.cs"
 "Assets/Scripts/KinematicSeek.cs"
 "Assets/Scripts/KinematicSteeringOutput.cs"
+"Assets/Scripts/KinematicWander.cs"
 "Assets/Scripts/SteeringOutput.cs"
 -langversion:9.0
 

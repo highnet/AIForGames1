@@ -4,29 +4,37 @@ using UnityEngine;
 
 public class Kinematic : MonoBehaviour
 {
-
-    public Vector3 position;
-    public float orientation;
-
+    private GameObject character;
+    public float rotationWaitSeconds;
+    public float translationWaitSeconds;
     public Vector3 velocity;
     public float rotation;
 
-    public SteeringOutput steering;
-
     // Update is called once per frame
-    void FixedUpdate()
+    private void Start()
     {
-        float time = Time.time;
+        character = this.gameObject;
+        StartCoroutine(DoRotation());
+        StartCoroutine(DoTranslation());
+    }
 
-        // Update the position and orientation
-        position += velocity * Time.deltaTime;
-        orientation += rotation * Time.deltaTime;
+    public IEnumerator DoRotation()
+    {
+        for (; ; )
+        {
+            character.transform.Rotate(new Vector3(0f, rotation, 0f));
+            yield return new WaitForSeconds(rotationWaitSeconds);
 
-        // Update the velocity and rotation
-        velocity += steering.linear * Time.deltaTime;
-        rotation += steering.angular * Time.deltaTime;
+        }
+    }
 
-        transform.SetPositionAndRotation(position,
-        Quaternion.Euler(new Vector3(0f, rotation, 0f)));
-     }
+    public IEnumerator DoTranslation()
+    {
+        for (; ; )
+        {
+            transform.Translate(velocity, Space.World); // move
+            yield return new WaitForSeconds(translationWaitSeconds);
+
+        }
+    }
 }

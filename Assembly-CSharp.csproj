@@ -53,11 +53,15 @@
     <UnityVersion>2021.2.0f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Kinematic.cs" />
-    <Compile Include="Assets\Scripts\SteeringOutput.cs" />
-    <Compile Include="Assets\Scripts\KinematicArrive.cs" />
     <Compile Include="Assets\Scripts\KinematicSteeringOutput.cs" />
+    <Compile Include="Assets\Scripts\KinematicWander.cs" />
+    <Compile Include="Assets\Scripts\KinematicArrive.cs" />
+    <Compile Include="Assets\Scripts\Kinematic.cs" />
     <Compile Include="Assets\Scripts\KinematicSeek.cs" />
+    <Compile Include="Assets\KinematicSeekAndFlee.cs" />
+    <Compile Include="Assets\Scripts\SteeringOutput.cs" />
+    <Compile Include="Assets\KinematicSeekFleeArrive.cs" />
+    <Compile Include="Assets\Alignment.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -6,42 +6,39 @@ public class KinematicSeek : MonoBehaviour
 {
     private GameObject character;
     public GameObject target;
+    public float rotationWaitSeconds;
+    public float translationWaitSeconds;
     public float maxSpeed;
 
-    public bool flee;
-
+    // Update is called once per frame
     private void Start()
     {
         character = this.gameObject;
+        StartCoroutine(DoRotation());
+        StartCoroutine(DoTranslation());
     }
 
-    public KinematicSteeringOutput GetSteering()
+    public IEnumerator DoRotation()
     {
-        KinematicSteeringOutput result = new KinematicSteeringOutput();
-
-
-        if (!flee)
+        for (; ; )
         {
-            result.velocity = target.transform.position - character.transform.position;
-        } else
-        {
-            result.velocity = character.transform.position - target.transform.position;
+
+            character.transform.LookAt(target.transform);
+            yield return new WaitForSeconds(rotationWaitSeconds);
+
         }
-
-        // the velocity is along this direction, at full speed.
-        result.velocity.Normalize();
-        result.velocity *= maxSpeed;
-
-        // face in the direction we want to move
-        character.transform.forward = result.velocity;
-
-        result.rotation = 0;
-        return result;
     }
 
-    private void Update()
+    public IEnumerator DoTranslation()
     {
-        KinematicSteeringOutput steering = GetSteering();
-        character.transform.Translate(steering.velocity,Space.World);
+        for (; ; )
+        {
+            Vector3 targetDirection = target.transform.position - character.transform.position;
+            targetDirection.Normalize();
+            Vector3 velocity = targetDirection * maxSpeed;
+            transform.Translate(velocity, Space.World); // move
+            yield return new WaitForSeconds(translationWaitSeconds);
+
+        }
     }
 }
