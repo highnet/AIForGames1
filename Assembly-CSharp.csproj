@@ -54,13 +54,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\KinematicWander.cs" />
+    <Compile Include="Assets\Scripts\Separation.cs" />
     <Compile Include="Assets\Scripts\KinematicArrive.cs" />
     <Compile Include="Assets\Scripts\Kinematic.cs" />
     <Compile Include="Assets\Scripts\KinematicSeekFleeArrive.cs" />
     <Compile Include="Assets\Scripts\Alignment.cs" />
     <Compile Include="Assets\Scripts\KinematicSeek.cs" />
     <Compile Include="Assets\Scripts\KinematicSeekAndFlee.cs" />
-    <Compile Include="Assets\Scripts\Separation.cs" />
+    <Compile Include="Assets\Scripts\Cohesion.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

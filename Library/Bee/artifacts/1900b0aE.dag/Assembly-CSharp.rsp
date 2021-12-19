@@ -341,6 +341,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/Alignment.cs"
+"Assets/Scripts/Cohesion.cs"
 "Assets/Scripts/Kinematic.cs"
 "Assets/Scripts/KinematicArrive.cs"
 "Assets/Scripts/KinematicSeek.cs"
